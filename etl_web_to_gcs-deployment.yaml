@@ -1,9 +1,9 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'etl-web-to-gcs'
 ###
-name: github-hw
+name: hw_web_to_gcs
 description: The main ETL Function
-version: ff3bb29e2aacde3a45d77a9f1caafef0
+version: 828a55941ea8e3f7ad7bdc975b1cc6b9
 # The work queue that will handle this deployment's runs
 work_queue_name: default
 work_pool_name: null
@@ -28,17 +28,8 @@ infrastructure:
 ###
 flow_name: etl-web-to-gcs
 manifest_path: null
-storage:
-  repository: https://github.com/elijellyeli/data-zoomcamp.git
-  reference: null
-  access_token: null
-  include_git_objects: true
-  _block_document_id: d469cfeb-ab22-434a-b200-77b24eadf7e6
-  _block_document_name: zoom-github
-  _is_anonymous: false
-  block_type_slug: github
-  _block_type_slug: github
-path: ''
+storage: null
+path: C:\Users\elibh\Desktop\dez-course\data-zoomcamp
 entrypoint: flows\web_to_gcs.py:etl_web_to_gcs
 parameter_openapi_schema:
   title: Parameters
@@ -46,4 +37,4 @@ parameter_openapi_schema:
   properties: {}
   required: null
   definitions: null
-timestamp: '2023-02-22T07:58:44.117453+00:00'
+timestamp: '2023-02-22T08:18:28.050347+00:00'
