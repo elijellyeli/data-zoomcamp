@@ -1,0 +1,53 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-web-to-gcs'
+###
+name: github-deployment
+description: The main ETL Function
+version: 62a1e72b98b39e1c2aeb3bb3c0bc39c0
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: default-agent-pool
+tags:
+- dev
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-web-to-gcs
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 1b17b227-c086-4035-b305-ba558d635a7d
+  _block_document_name: anonymous-0e3040e9-2487-4ae5-aca6-e773688c66a4
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage:
+  repository: https://github.com/elijellyeli/data-zoomcamp.git
+  reference: null
+  access_token: null
+  include_git_objects: true
+  _block_document_id: 6ab89736-34ce-4eb3-a4d9-2c91e8a61928
+  _block_document_name: zoom-github
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: flows\web_to_gcs.py:etl_web_to_gcs
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties: {}
+  required: null
+  definitions: null
+timestamp: '2023-02-21T19:30:35.197186+00:00'
