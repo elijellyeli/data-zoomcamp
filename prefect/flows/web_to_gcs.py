@@ -13,14 +13,14 @@ def fetch(dataset_url: str) -> pd.DataFrame:
     print(f"df size: {len(df)}")
     return df
 
-@task(log_prints=True)
+@task()
 def clean(df: pd.DataFrame) -> pd.DataFrame:
     """"Fix dtype issues"""
     df['lpep_pickup_datetime'] = pd.to_datetime(df['lpep_pickup_datetime'])
     df['lpep_dropoff_datetime'] = pd.to_datetime(df['lpep_dropoff_datetime'])
     return df
 
-@task()
+@task(log_prints=True)
 def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """"Write DataDFrame locally as parquet file"""
     pre_path = Path.cwd().parent
@@ -35,7 +35,7 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
 def write_gcs(path: Path) -> None:
     """"Uploading local parquet file to GCS"""
 
-    gcs_block = GcsBucket.load("zoom-gcs")
+    gcs_block = GcsBucket.load("zoom-gcs-bucket")
 
     to_p = f"data/{path.parent.stem}/{path.name}"
     gcs_block.upload_from_path(
@@ -49,8 +49,8 @@ def etl_web_to_gcs() -> None:
     """The main ETL Function"""
 
     color = "green"
-    year = 2020
-    month = 11
+    year = 2019
+    month = 4
     dataset_file = f"{color}_tripdata_{year}-{month:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 

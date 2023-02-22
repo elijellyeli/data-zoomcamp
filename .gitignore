@@ -2,9 +2,13 @@
 
 data/
 
+<<<<<<< HEAD
 flows/__pycache__/
 # Default .gitignore content added by dbt Cloud
 target/
 dbt_packages/
 logs/
 # end dbt Cloud content
+=======
+*/__pycache__/
+>>>>>>> 2748c6975eb25175229e23c58f28c5d26a548acd
