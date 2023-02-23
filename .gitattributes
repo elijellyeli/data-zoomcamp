@@ -1,4 +1,5 @@
 *.sql linguist-detectable=true
 *.sql linguist-language=sql
-*.yml linguist-detectable=true
-*.yml linguist-language=yml
+# add yml as langauge
+# *.yml linguist-detectable=true
+# *.yml linguist-language=yml
