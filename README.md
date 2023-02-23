@@ -10,7 +10,7 @@ prefect deployment build flows/web_to_gcs.py:etl_web_to_gcs \
 ```
 
 
-## Add packages dependencies
+## Running dbt in production
 ```
-dbt deps
+dbt build --var 'is_test_run: false'
 ```
