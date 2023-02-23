@@ -7,7 +7,7 @@ flows/__pycache__/
 
 # Default .gitignore content added by dbt Cloud
 dbt/target/
-dbt/dbt_packages/
-dbt/logs/
+dbt_packages/
+logs/
 # end dbt Cloud content
 

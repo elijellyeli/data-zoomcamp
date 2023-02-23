@@ -8,3 +8,9 @@ prefect deployment build flows/web_to_gcs.py:etl_web_to_gcs \
   -sb "github/zoom-github" \
   --apply
 ```
+
+
+## Add packages dependencies
+```
+dbt deps
+```

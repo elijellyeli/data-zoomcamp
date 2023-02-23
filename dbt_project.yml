@@ -20,9 +20,9 @@ macro-paths: ["dbt/macros"]
 snapshot-paths: ["dbt/snapshots"]
 
 target-path: "dbt/target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
+clean-targets:   # directories to be removed by `dbt clean`
   - "dbt/target"
-  - "dbt/dbt_packages"
+  - "dbt_packages"
 
 
 # Configuring models
@@ -34,3 +34,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   # taxi_rides_ny:
     # Applies to all files under models/example/
+
+seeds: 
+  taxi_rides_ny:
+    taxi_zone_lookup:
+      +column_types:
+        locationid: numeric
