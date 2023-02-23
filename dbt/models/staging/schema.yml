@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: de-dtc-377713
+    schema: de_zoomcamp
+    
+    tables:
+      - name: green_tripdata_non_partitoned
+      - name: yellow_tripdata_non_partitoned
