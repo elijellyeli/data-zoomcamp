@@ -1,14 +1,12 @@
-{{ config(materialized='table') }}
+{{ config(materialized="table") }}
 
-with trips_data as (
-    select * from {{ ref('fact_trips') }}
-)
+with trips_data as (select * from {{ ref("fact_trips") }})
 
-select 
+select
     -- Reveneue grouping 
     pickup_zone as revenue_zone,
     date_trunc(pickup_datetime, month) as revenue_month,
-    service_type, 
+    service_type,
 
     -- Revenue calculation 
     sum(fare_amount) as revenue_monthly_fare,
@@ -27,4 +25,4 @@ select
     avg(trip_distance) as avg_montly_trip_distance
 
 from trips_data
-group by 1,2,3
+group by 1, 2, 3
